@@ -45,29 +45,39 @@ npm run start
 
 ```
 src/
-├── modules/           # Módulos da aplicação
-│   ├── auth/         # Módulo de autenticação
+├── app/             # Pasta do componente principal
+│   └── App.tsx     # Componente principal da aplicação
+│
+├── modules/         # Módulos da aplicação
+│   ├── auth/       # Módulo de autenticação
 │   │   ├── components/   # Componentes de autenticação
 │   │   ├── pages/       # Páginas de login/registro
-│   │   ├── provider/    # Contexto de autenticação
+│   │   ├── context/    # Contexto de autenticação
+│   │   ├── hooks/    # Hooks de autenticação
+│   │   ├── provider/    # Provider de autenticação
 │   │   ├── styles/     # Estilos do módulo auth
+│   │   ├── services/     # Serviços do módulo auth
 │   │   └── types/      # Tipos e interfaces
 │   │
-│   └── dragons/      # Módulo de dragões
+│   └── dragons/    # Módulo de dragões
 │       ├── components/   # Componentes específicos do módulo
 │       ├── pages/       # Páginas do módulo
-│       ├── provider/    # Contexto e lógica de estado
+│       ├── context/    # Contexto específicos do módulo
+│       ├── provider/    # Provider e lógica de estado
+│       ├── hooks/    # Hooks específicos do módulo
+│       ├── routes/    # Rotas específicas do módulo
 │       ├── styles/     # Estilos específicos do módulo
 │       └── types/      # Tipos e interfaces
 │
-├── shared/           # Recursos compartilhados
-│   ├── components/   # Componentes reutilizáveis
-│   ├── hooks/       # Hooks personalizados
-│   ├── styles/      # Estilos globais e variáveis
-│   └── utils/       # Funções utilitárias
+├── shared/         # Recursos compartilhados
+│   ├── components/ # Componentes reutilizáveis
+│   ├── hooks/     # Hooks personalizados
+│   ├── services/    # Estilos globais e variáveis
+│   ├── styles/    # Estilos globais e variáveis
+│   ├── types/    # Estilos globais e variáveis
+│   └── utils/     # Funções utilitárias
 │
-├── App.tsx          # Componente principal
-└── main.tsx        # Ponto de entrada da aplicação
+└── main.tsx      # Ponto de entrada da aplicação
 ```
 
 ## 🔄 Funcionalidades
