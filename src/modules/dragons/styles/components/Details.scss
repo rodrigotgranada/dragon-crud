@@ -1,0 +1,194 @@
+.dragon-card {
+  background: v.$bg-white;
+  border: 1px solid v.$border-color;
+  border-radius: v.$border-radius;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: v.$spacing-lg;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: v.$spacing-lg;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: v.$h2-size;
+    font-weight: v.$h2-weight;
+    color: v.$text-color;
+  }
+
+  &__actions {
+    display: flex;
+    gap: v.$spacing-sm;
+
+    button {
+      transition: transform 0.2s ease, opacity 0.2s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+        opacity: 0.9;
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: v.$spacing-lg;
+    padding-top: v.$spacing-lg;
+    border-top: 1px solid v.$border-color-light;
+  }
+
+  &__section {
+    margin-bottom: v.$spacing-xl;
+  }
+
+  &__subtitle {
+    font-size: v.$h3-size;
+    font-weight: v.$h3-weight;
+    margin-bottom: v.$spacing-md;
+    color: v.$text-color;
+  }
+}
+
+.dragon-info-field {
+  &__label {
+    margin: 0 0 v.$spacing-xs;
+    font-size: 1rem;
+    font-weight: 600;
+    color: v.$secondary-color;
+  }
+
+  &__value {
+    margin: 0;
+    font-size: 1rem;
+    color: v.$text-color;
+    line-height: 1.5;
+  }
+}
+
+.dragon-histories {
+  &__title {
+    margin: 0 0 v.$spacing-md;
+    font-size: v.$h4-size;
+    font-weight: v.$h4-weight;
+    color: v.$secondary-color;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: v.$spacing-md;
+    background-color: rgba(v.$secondary-color, 0.05);
+    border-radius: v.$border-radius;
+    margin-bottom: v.$spacing-sm;
+    font-size: 1rem;
+    color: v.$text-color;
+    line-height: 1.5;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: rgba(v.$secondary-color, 0.08);
+      transform: translateX(2px);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__empty {
+    margin: 0;
+    font-size: 0.875rem;
+    color: v.$secondary-color;
+    font-style: italic;
+  }
+}
+
+.dragon-details {
+  &__title {
+    font-size: v.$h2-size;
+    font-weight: v.$h2-weight;
+    margin-bottom: v.$spacing-lg;
+    color: v.$secondary-color;
+  }
+
+  &__section {
+    margin-bottom: v.$spacing-xl;
+  }
+
+  &__subtitle {
+    font-size: v.$h3-size;
+    font-weight: v.$h3-weight;
+    margin-bottom: v.$spacing-md;
+    color: v.$text-color;
+  }
+
+  &__info {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: v.$spacing-sm;
+  }
+
+  &__label {
+    font-weight: 600;
+    margin-right: v.$spacing-xs;
+  }
+
+  &__value {
+    color: v.$text-color;
+  }
+
+  &__history {
+    padding: v.$spacing-md;
+    border-radius: v.$border-radius;
+    background-color: rgba(v.$secondary-color, 0.05);
+    margin-bottom: v.$spacing-sm;
+
+    h4 {
+      font-size: v.$h4-size;
+      font-weight: v.$h4-weight;
+      margin-bottom: v.$spacing-sm;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+@include b.max-sm {
+  .dragon-card {
+    padding: v.$spacing-md;
+
+    &__header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: v.$spacing-sm;
+    }
+
+    &__actions {
+      flex-wrap: wrap;
+    }
+  }
+
+  .dragon-histories {
+    &__item {
+      padding: v.$spacing-sm;
+    }
+  }
+} 

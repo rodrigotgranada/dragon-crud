@@ -1,0 +1,34 @@
+.history-field {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-md;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      font-size: v.$h4-size;
+      font-weight: v.$h4-weight;
+      color: v.$text-color;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-sm;
+  }
+
+  @include b.media-max('sm') {
+    gap: v.$spacing-sm;
+
+    &__header {
+      h3 {
+        font-size: v.$font-size-lg;
+      }
+    }
+  }
+} 

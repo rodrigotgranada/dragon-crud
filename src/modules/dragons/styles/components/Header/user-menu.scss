@@ -1,0 +1,130 @@
+.user-menu {
+  position: relative;
+
+  &__trigger {
+    background: transparent;
+    border: 1px solid v.$text-light;
+    color: v.$text-light;
+    padding: v.$spacing-sm v.$spacing-md;
+    border-radius: v.$border-radius;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: v.$spacing-xs;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      background: rgba(v.$text-light, 0.1);
+    }
+
+    &:active {
+      background: rgba(v.$text-light, 0.2);
+    }
+  }
+
+  &__name {
+    @include b.media-max('sm') {
+      display: none;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + v.$spacing-xs);
+    right: 0;
+    background: v.$bg-white;
+    border-radius: v.$border-radius;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: v.$spacing-md;
+    min-width: 200px;
+    z-index: 10;
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  &__info {
+    margin-bottom: v.$spacing-md;
+    color: v.$text-color;
+    padding-bottom: v.$spacing-sm;
+    border-bottom: 1px solid v.$border-color-light;
+
+    p {
+      margin: 0;
+      font-size: v.$font-size-sm;
+
+      &:first-child {
+        font-weight: v.$font-weight-bold;
+        margin-bottom: v.$spacing-xs;
+        color: v.$text-color;
+      }
+
+      &:last-child {
+        color: v.$text-muted;
+      }
+    }
+  }
+
+  &__logout {
+    width: 100%;
+    color: v.$danger-color;
+    padding: v.$spacing-sm;
+    border-radius: v.$border-radius;
+    transition: all 0.2s ease;
+    text-align: center;
+    font-size: v.$font-size-sm;
+
+    &:hover {
+      background-color: rgba(v.$danger-color, 0.1);
+    }
+
+    &:active {
+      background-color: rgba(v.$danger-color, 0.2);
+    }
+  }
+
+  @include b.media-max('sm') {
+    &__trigger {
+      padding: 0;
+      font-size: v.$font-size-sm;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        width: 32px;
+        height: 32px;
+        margin: 0;
+      }
+    }
+
+    &__dropdown {
+      min-width: 180px;
+      padding: v.$spacing-sm;
+    }
+
+    &__info {
+      margin-bottom: v.$spacing-sm;
+    }
+
+    &__logout {
+      padding: v.$spacing-sm;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

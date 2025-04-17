@@ -1,0 +1,125 @@
+.dragons-list {
+  padding: v.$spacing-lg;
+  height: calc(100vh - 64px);
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: v.$spacing-lg;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    h1 {
+      margin: 0 0 v.$spacing-xs;
+      font-size: v.$font-size-xl;
+      font-weight: v.$font-weight-bold;
+    }
+
+    p {
+      margin: 0;
+      color: v.$text-muted;
+    }
+  }
+
+  &__table {
+    display: none;
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+
+    @include b.md {
+      display: block;
+    }
+  }
+
+  &__cards {
+    display: none;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: v.$spacing-sm;
+    margin-right: -(v.$spacing-sm);
+    scrollbar-width: thin;
+    scrollbar-color: v.$primary-color transparent;
+
+    @include b.max-sm {
+      display: block;
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(v.$primary-color, 0.5);
+      border-radius: 4px;
+
+      &:hover {
+        background: v.$primary-color;
+      }
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    color: v.$text-muted;
+    padding: v.$spacing-lg;
+  }
+
+  &__error {
+    text-align: center;
+    padding: v.$spacing-xl;
+    color: v.$danger-color;
+    font-size: v.$font-size-lg;
+  }
+
+  &__loading {
+    text-align: center;
+    padding: v.$spacing-xl;
+    color: v.$text-muted;
+    font-size: v.$font-size-lg;
+  }
+
+  @include b.max-sm {
+    padding: v.$spacing-md;
+    height: calc(100vh - 56px);
+
+    &__header {
+      flex-direction: column;
+      gap: v.$spacing-md;
+      margin-bottom: v.$spacing-md;
+      align-items: stretch;
+    }
+
+    &__title {
+      text-align: start;
+
+      h1 {
+        font-size: v.$h3-size;
+      }
+    }
+
+    &__empty,
+    &__error,
+    &__loading {
+      padding: v.$spacing-lg;
+      font-size: v.$font-size-base;
+    }
+  }
+}
+
+.table-actions {
+  display: flex;
+  gap: v.$spacing-xs;
+  justify-content: flex-end;
+} 

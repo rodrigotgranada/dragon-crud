@@ -1,0 +1,85 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-xs;
+  width: 100%;
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: v.$text-color;
+
+    @include b.max-sm {
+      font-size: 0.8125rem;
+    }
+  }
+
+  &__input-wrapper {
+    display: flex;
+    gap: v.$spacing-sm;
+    width: 100%;
+    align-items: center;
+
+    @include b.max-sm {
+      gap: v.$spacing-xs;
+    }
+
+    .remove-button {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+
+      @include b.max-sm {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: v.$spacing-sm v.$spacing-md;
+    border: 1px solid v.$border-color;
+    border-radius: v.$border-radius;
+    font-size: 1rem;
+    transition: border-color 0.2s, padding 0.2s;
+
+    @include b.max-sm {
+      padding: v.$spacing-sm v.$spacing-sm;
+      font-size: 0.975rem;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: v.$primary-color;
+    }
+
+    &:disabled {
+      background-color: v.$border-color-light;
+      cursor: not-allowed;
+    }
+
+    &::placeholder {
+      color: v.$text-muted;
+      
+      @include b.max-sm {
+        font-size: 0.925rem;
+      }
+    }
+  }
+
+  &--with-remove {
+    .field__input-wrapper {
+      position: relative;
+    }
+
+    .field__input {
+      padding-right: 40px;
+
+      @include b.max-sm {
+        padding-right: 32px;
+      }
+    }
+  }
+} 

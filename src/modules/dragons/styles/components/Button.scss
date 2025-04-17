@@ -1,0 +1,50 @@
+ .remove-button {
+  width: v.$spacing-xl;
+  height: v.$spacing-xl;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid v.$danger-color;
+  color: v.$danger-color;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  svg {
+    width: v.$spacing-md;
+    height: v.$spacing-md;
+  }
+
+  &:hover {
+    background: v.$danger-color;
+    color: v.$text-light;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    &:hover {
+      background: transparent;
+      color: v.$danger-color;
+      transform: none;
+    }
+  }
+
+  @include b.media-max('sm') {
+    width: v.$spacing-lg;
+    height: v.$spacing-lg;
+
+    svg {
+      width: v.$spacing-sm;
+      height: v.$spacing-sm;
+    }
+  }
+} 

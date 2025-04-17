@@ -1,0 +1,65 @@
+.dragon-list-card {
+  background: v.$bg-white;
+  border: 1px solid v.$border-color;
+  border-radius: v.$border-radius;
+  padding: v.$spacing-md;
+  margin-bottom: v.$spacing-md;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: v.$spacing-sm;
+
+    @include b.max-sm {
+      flex-direction: column;
+      gap: v.$spacing-sm;
+    }
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__name {
+    font-size: v.$font-size-xl;
+    font-weight: v.$font-weight-bold;
+    color: v.$text-color;
+    margin: 0 0 v.$spacing-xs;
+  }
+
+  &__type {
+    color: v.$text-muted;
+    font-size: v.$font-size-sm;
+    margin: 0;
+  }
+
+  &__date {
+    color: v.$text-muted;
+    font-size: v.$font-size-sm;
+    margin: v.$spacing-xs 0 0;
+  }
+
+  &__actions {
+    display: flex;
+    gap: v.$spacing-xs;
+
+    @include b.max-sm {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+
+  &__action {
+  
+    @include b.max-sm {
+        flex: 1;
+        justify-content: center;
+      }
+  }
+} 

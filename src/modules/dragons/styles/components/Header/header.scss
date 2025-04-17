@@ -1,0 +1,38 @@
+.dragons-header {
+  background: v.$bg-dark;
+  color: v.$text-light;
+  padding: v.$spacing-xl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__title {
+    font-size: v.$h2-size;
+    font-weight: v.$h2-weight;
+    margin: 0;
+  }
+
+  &__actions {
+    display: flex;
+    gap: v.$spacing-md;
+  }
+
+  @include b.media-max('sm') {
+    padding: v.$spacing-md;
+
+    gap: v.$spacing-md;
+
+    &__title {
+      font-size: v.$h3-size;
+      text-align: center;
+    }
+
+    &__actions {
+      width: 100%;
+      justify-content: center;
+      gap: v.$spacing-sm;
+    }
+  }
+} 

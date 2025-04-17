@@ -1,0 +1,13 @@
+.register-button {
+  text-align: center;
+  margin-top: v.$spacing-md;
+
+  .button {
+    color: v.$primary-color;
+    font-size: v.$font-size-sm;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+} 

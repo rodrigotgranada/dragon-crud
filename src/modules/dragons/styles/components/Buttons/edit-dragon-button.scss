@@ -1,0 +1,32 @@
+ .edit-dragon-button {
+  color: v.$primary-color;
+  padding: v.$spacing-sm v.$spacing-md;
+  border-radius: v.$border-radius;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: v.$spacing-xs;
+
+  &:hover {
+    background-color: rgba(v.$primary-color, 0.1);
+  }
+
+  &:active {
+    background-color: rgba(v.$primary-color, 0.2);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  @include b.media-max('sm') {
+    padding: v.$spacing-xs v.$spacing-sm;
+    font-size: v.$font-size-sm;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+} 

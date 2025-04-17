@@ -1,0 +1,138 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: v.$spacing-md;
+
+  @include b.max-sm {
+    padding: v.$spacing-sm;
+  }
+}
+
+.modal-content {
+  background: v.$bg-white;
+  border-radius: v.$border-radius;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: modal-appear 0.3s ease;
+
+  &__header {
+    padding: v.$spacing-md v.$spacing-lg;
+    border-bottom: 1px solid v.$border-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+
+    @include b.max-sm {
+      padding: v.$spacing-md;
+      min-height: 48px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: v.$font-size-lg;
+    font-weight: v.$font-weight-bold;
+    color: v.$text-color;
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: v.$text-muted;
+    cursor: pointer;
+    border-radius: v.$border-radius-sm;
+    transition: all 0.2s ease;
+    margin: -(v.$spacing-xs);
+
+    &:hover {
+      background-color: v.$border-color-light;
+      color: v.$text-color;
+    }
+
+    @include b.max-sm {
+      width: 28px;
+      height: 28px;
+      font-size: 20px;
+    }
+  }
+
+  &__body {
+    padding: v.$spacing-lg;
+    overflow-y: auto;
+    flex: 1;
+    color: v.$text-color;
+    font-size: v.$font-size-base;
+
+    @include b.max-sm {
+      padding: v.$spacing-md;
+    }
+  }
+
+  &__footer {
+    padding: v.$spacing-md v.$spacing-lg;
+    border-top: 1px solid v.$border-color;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: v.$spacing-md;
+    min-height: 72px;
+
+    @include b.max-sm {
+      padding: v.$spacing-md;
+      min-height: 64px;
+      gap: v.$spacing-sm;
+    }
+  }
+
+  @include b.max-sm {
+    width: 100%;
+    height: auto;
+    max-height: 95vh;
+    border-radius: v.$border-radius-sm;
+  }
+}
+
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@include b.max-sm {
+  @keyframes modal-appear {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+} 

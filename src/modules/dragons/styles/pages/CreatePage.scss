@@ -1,0 +1,24 @@
+.create-form {
+  padding: v.$spacing-lg;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  background: v.$bg-white;
+  border-radius: v.$border-radius;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: v.$spacing-lg;
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-md;
+    margin-bottom: v.$spacing-lg;
+  }
+
+  @include b.max-sm {
+    padding: v.$spacing-md;
+    margin: v.$spacing-sm;
+    width: calc(100% - #{v.$spacing-sm * 2});
+    border-radius: v.$border-radius-sm;
+  }
+}

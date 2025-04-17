@@ -1,0 +1,32 @@
+.modal-alert {
+  &__content {
+    max-width: 400px; 
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-md;
+  }
+
+  &__message {
+    font-size: v.$font-size-base;
+    color: v.$text-color;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  &__footer {
+    margin-top: v.$spacing-sm;
+  }
+
+  @include b.max-sm {
+    &__content {
+      max-width: 90%;
+    }
+
+    &__body {
+      gap: v.$spacing-sm;
+    }
+  }
+} 

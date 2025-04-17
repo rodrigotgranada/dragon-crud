@@ -1,0 +1,88 @@
+@use 'sass:map';
+
+$breakpoints: (
+  'xs': 375px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+@function get-breakpoint($key) {
+  @if map.has-key($breakpoints, $key) {
+    @return map.get($breakpoints, $key);
+  }
+  @error 'Breakpoint "#{$key}" não encontrado no mapa $breakpoints.';
+  @return null;
+}
+
+@mixin media-min($breakpoint) {
+  $width: get-breakpoint($breakpoint);
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin media-max($breakpoint) {
+  $width: get-breakpoint($breakpoint);
+  @media (max-width: ($width - 1px)) {
+    @content;
+  }
+}
+
+@mixin media-between($min, $max) {
+  $min-width: get-breakpoint($min);
+  $max-width: get-breakpoint($max);
+  @media (min-width: $min-width) and (max-width: ($max-width - 1px)) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @include media-min('sm') {
+    @content;
+  }
+}
+
+@mixin md {
+  @include media-min('md') {
+    @content;
+  }
+}
+
+@mixin lg {
+  @include media-min('lg') {
+    @content;
+  }
+}
+
+@mixin xl {
+  @include media-min('xl') {
+    @content;
+  }
+}
+
+@mixin max-sm {
+  @include media-max('sm') {
+    @content;
+  }
+}
+
+@mixin max-md {
+  @include media-max('md') {
+    @content;
+  }
+}
+
+@mixin max-lg {
+  @include media-max('lg') {
+    @content;
+  }
+}
+
+@mixin max-xl {
+  @include media-max('xl') {
+    @content;
+  }
+} 

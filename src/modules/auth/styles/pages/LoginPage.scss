@@ -1,0 +1,64 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: v.$spacing-lg;
+  background-color: rgba(v.$primary-color, 0.05);
+
+  &__content {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .form-wrapper {
+    background: v.$bg-white;
+    padding: v.$spacing-xl;
+    border-radius: v.$border-radius;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &__title {
+      color: v.$secondary-color;
+      margin-bottom: v.$spacing-xl;
+      text-align: center;
+      font-size: v.$h2-size;
+      font-weight: v.$h2-weight;
+    }
+
+    .field {
+      margin-bottom: v.$spacing-lg;
+    }
+
+    .button {
+      width: 100%;
+      margin-top: v.$spacing-lg;
+    }
+  }
+
+  &__register {
+    text-align: center;
+    margin-top: v.$spacing-md;
+
+    .button {
+      color: v.$primary-color;
+      font-size: v.$font-size-sm;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @include b.media-max('sm') {
+    padding: v.$spacing-md;
+
+    .form-wrapper {
+      padding: v.$spacing-lg;
+
+      &__title {
+        font-size: v.$h3-size;
+        margin-bottom: v.$spacing-lg;
+      }
+    }
+  }
+} 
