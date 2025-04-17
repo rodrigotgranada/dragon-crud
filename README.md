@@ -17,7 +17,7 @@ Uma aplicação web moderna para gerenciamento de dragões, permitindo visualiza
 
 ```bash
 # Clone o repositório
-git clone [https://github.com/rodrigotgranada/dragon-crud.git]
+git clone https://github.com/rodrigotgranada/dragon-crud.git
 
 # Entre na pasta do projeto
 cd dragon-app
