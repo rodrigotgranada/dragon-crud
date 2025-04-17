@@ -13,6 +13,11 @@ Uma aplicação web moderna para gerenciamento de dragões, permitindo visualiza
 - **React Router DOM** - Roteamento da aplicação
 - **Context API** - Gerenciamento de estado global
 
+## 📋 Pré-requisitos
+
+- Node.js - versão 20.11.1 ou superior
+- npm - versão 10.2.4 ou superior
+
 ## 📦 Instalação
 
 ```bash
