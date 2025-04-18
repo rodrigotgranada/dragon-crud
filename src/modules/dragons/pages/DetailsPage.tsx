@@ -12,14 +12,17 @@ export default function DetailsPage() {
   const [dragon, setDragon] = useState<Dragon | null>(null)
 
   useEffect(() => {
-    if (id) {
-      const dragonData = getDragon(id)
-      if (dragonData) {
-        setDragon(dragonData)
-      } else {
-        navigate('/dragons')
+    async function fetchDragon() {
+      if (id) {
+        const dragonData = await getDragon(id)
+        if (dragonData) {
+          setDragon(dragonData)
+        } else {
+          navigate('/dragons')
+        }
       }
     }
+    fetchDragon()
   }, [id, getDragon, navigate])
 
   if (!dragon) {

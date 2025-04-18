@@ -2,6 +2,7 @@ import { useState, ReactNode, useCallback } from 'react'
 import { DragonsContext } from '../context/DragonsContext'
 import * as dragonsService from '../services/dragonsService'
 import { Dragon } from '../types/dragon'
+import { DragonsContextType } from '../types/dragonsContext'
 
 export const DragonsProvider = ({ children }: { children: ReactNode }) => {
   const [dragons, setDragons] = useState<Dragon[]>([])
@@ -61,11 +62,21 @@ export const DragonsProvider = ({ children }: { children: ReactNode }) => {
     }
   }
 
-  const getDragon = useCallback((id: string) => {
-    return dragons.find(dragon => dragon.id === id)
-  }, [dragons])
+  const getDragon = useCallback(async (id: string) => {
+    try {
+      setIsLoading(true)
+      setError(null)
+      const data = await dragonsService.getDragonById(id)
+      return data
+    } catch {
+      setError('Erro ao carregar detalhes do dragão')
+      return undefined
+    } finally {
+      setIsLoading(false)
+    }
+  }, [])
 
-  const value = {
+  const value: DragonsContextType = {
     dragons,
     isLoading,
     error,
@@ -77,9 +88,7 @@ export const DragonsProvider = ({ children }: { children: ReactNode }) => {
   }
 
   return (
-    <DragonsContext.Provider
-      value={value}
-    >
+    <DragonsContext.Provider value={value}>
       {children}
     </DragonsContext.Provider>
   )

@@ -7,6 +7,11 @@ export async function fetchDragons() {
   return data
 }
 
+export async function getDragonById(id: string) {
+  const { data } = await api.get<Dragon>(`/dragon/${id}`)
+  return data
+}
+
 export async function createDragon(dragon: Omit<Dragon, 'id' | 'createdAt'>) {
   const newDragon = {
     ...dragon,
